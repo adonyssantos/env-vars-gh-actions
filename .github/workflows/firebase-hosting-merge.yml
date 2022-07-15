@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Load the secrets in the .env file
-        uses: actions/load-secrets@v2
+      - uses: actions/load-secrets@v2
         with:
           secrets:
             VITE_MY_CUSTOM_VAR: $VITE_MY_CUSTOM_VAR
