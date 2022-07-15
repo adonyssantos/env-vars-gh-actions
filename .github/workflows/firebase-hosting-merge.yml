@@ -6,17 +6,12 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+env:
+  VITE_MY_CUSTOM_VAR: 'hola mundo desde un workflow'
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Load the secrets in the .env file
-      - uses: actions/load-secrets@v2
-        with:
-          secrets:
-            VITE_MY_CUSTOM_VAR: $VITE_MY_CUSTOM_VAR
-
-      - name: Build the app
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
