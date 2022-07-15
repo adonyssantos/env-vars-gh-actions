@@ -7,7 +7,7 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 env:
-  VITE_MY_CUSTOM_VAR: ${{ secrets.MY_CUSTOM_VAR }}
+  VITE_MY_CUSTOM_VAR: ${{ env.MY_CUSTOM_VAR }}
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
